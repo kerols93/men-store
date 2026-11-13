@@ -1,6 +1,5 @@
 # Dependencies & build outputs from old frameworks
 node_modules/
-dist/
 man-store/
 package.json
 package-lock.json

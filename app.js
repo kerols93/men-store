@@ -825,10 +825,17 @@ function renderCart() {
     // حساب الإجماليات
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
-    // حساب الخصم الفعلي
+    // حساب الخصم الفعلي مع المراجعة التلقائية للحد الأدنى
     let discountAmount = 0;
     if (activeCoupon && subtotal > 0) {
-        discountAmount = Math.round((subtotal * activeCoupon.percent) / 100);
+        if (activeCoupon.minOrder > 0 && subtotal < activeCoupon.minOrder) {
+            // إلغاء الكوبون تلقائياً إذا نزل المجموع عن الحد الأدنى بعد تعديل السلة
+            activeCoupon = null;
+            saveCartToStorage();
+            showToast("تم إزالة الكوبون لأن المجموع أصبح أقل من الحد الأدنى للخصم", "error");
+        } else {
+            discountAmount = Math.round((subtotal * activeCoupon.percent) / 100);
+        }
     } else if (subtotal === 0) {
         discountAmount = 0;
     }

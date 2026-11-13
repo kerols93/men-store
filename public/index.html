@@ -1,0 +1,550 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAN | متجر أزياء رجالية فاخرة</title>
+    <!-- Google Fonts: Alexandria & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الشريط العلوي للإعلانات -->
+    <div class="top-announcement">
+        <div class="container announcement-content">
+            <span>✨ شحن مجاني لكافة محافظات مصر للطلبات فوق 500 ج.م | خامات إيطالية وقطن مصري 100%</span>
+            <span class="delivery-badge">توصيل سريع خلال 24 - 48 ساعة</span>
+        </div>
+    </div>
+
+    <!-- ترويسة الموقع (Header & Navigation) -->
+    <header class="main-header">
+        <div class="container header-container">
+            <!-- الشعار -->
+            <a href="#" class="brand-logo">
+                <span class="logo-text">MAN</span>
+                <span class="logo-sub">MEN'S ATELIER</span>
+            </a>
+
+            <!-- روابط التنقل للشاشات الكبيرة -->
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#hero" class="active">الرئيسية</a></li>
+                    <li><a href="#bestsellers">الأكثر طلباً 🔥</a></li>
+                    <li><a href="#products">التشكيلة والتصنيفات</a></li>
+                    <li><a href="#cart">سلة المشتريات</a></li>
+                    <li><a href="#checkout">تأكيد الطلب</a></li>
+                </ul>
+            </nav>
+
+            <!-- الإجراءات (سلة المشتريات + زر القائمة للموبايل) -->
+            <div class="header-actions">
+                <a href="#cart" class="icon-btn cart-btn" aria-label="سلة المشتريات">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-badge" id="cart-badge-count">0</span>
+                </a>
+
+                <!-- زر القائمة للموبايل (Hamburger Button) -->
+                <button type="button" class="hamburger-btn" id="mobile-menu-toggle" aria-label="فتح قائمة التنقل">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- خلفية وقائمة الموبايل الجانبية المنبثقة (Mobile Navigation Drawer) -->
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="قائمة الموبايل">
+        <div class="mobile-nav-header">
+            <a href="#" class="brand-logo">
+                <span class="logo-text">MAN</span>
+                <span class="logo-sub">MEN'S ATELIER</span>
+            </a>
+            <button type="button" class="mobile-nav-close" id="mobile-menu-close" aria-label="إغلاق القائمة">✕</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#hero" class="mobile-link">الرئيسية</a></li>
+            <li><a href="#bestsellers" class="mobile-link">الأكثر طلباً 🔥</a></li>
+            <li><a href="#products" class="mobile-link">التشكيلة والتصنيفات</a></li>
+            <li><a href="#cart" class="mobile-link">سلة المشتريات</a></li>
+            <li><a href="#checkout" class="mobile-link">تأكيد الطلب</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="https://wa.me/201200297370" target="_blank" class="mobile-whatsapp-cta" data-whatsapp-link>
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span>طلب ومحادثة عبر واتساب</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- قسم الواجهة الرئيسية (Hero Section) -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-tag">مجموعة خريف / شتاء 2026</div>
+                <h1 class="hero-title">الفخامة تبدأ<br><span class="highlight-text">باللون الأسود</span></h1>
+                <p class="hero-description">
+                    أزياء رجالية استثنائية صُممت بدقة متناهية لتعبر عن حضورك وهيبتك. خامات إيطالية فاخرة وأسود ملكي لا يبهت.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">استعرض التشكيلة</a>
+                    <a href="#checkout" class="btn btn-secondary">إتمام الطلب السريع</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">+15K</span>
+                        <span class="stat-label">عميل متميز</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">أقمشة فاخرة</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">4.9/5</span>
+                        <span class="stat-label">تقييم الجودة</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ميزات المتجر (Store Features) -->
+        <section class="features-section">
+            <div class="container features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="feature-title">ضمان الجودة والأصالة</h4>
+                        <p class="feature-text">خامات إيطالية وقطن نقي 100%</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    </div>
+                    <div>
+                        <h4 class="feature-title">توصيل سريع ومباشر</h4>
+                        <p class="feature-text">لباب بيتك مع معاينة الشحنة قبل الدفع</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="feature-title">استبدال واسترجاع سهل</h4>
+                        <p class="feature-text">خلال 14 يوماً مع تغليف مجاني فاخر</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                    </div>
+                    <div>
+                        <h4 class="feature-title">دفع آمن بالواتساب أو COD</h4>
+                        <p class="feature-text">دفع عند الاستلام أو إنستاباي ومحافظ إلكترونية</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 1. قسم المنتجات الأكثر مبيعاً والأعلى طلباً (Best Sellers Section) -->
+        <!-- ================================================================= -->
+        <section id="bestsellers" class="products-section bestsellers-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">الأكثر طلباً ومبيعاً 🔥</span>
+                    <h2 class="section-title">قطع حازت على ثقة عملائنا</h2>
+                    <p class="section-subtitle">المنتجات الأكثر تكراراً وطلباً عبر واتساب هذا الشهر — اطلب مقاسك فوراً</p>
+                </div>
+
+                <!-- شبكة المنتجات الأكثر مبيعاً (تتولد تلقائياً بواسطة JavaScript) -->
+                <div class="products-grid" id="bestsellers-grid">
+                    <div class="loading-products-spinner">
+                        <div class="spinner-icon"></div>
+                        <p>جارٍ تحميل القطع الأكثر طلباً...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 2. قسم التشكيلة الكاملة والتصنيفات التفاعلية (Full Collection)    -->
+        <!-- ================================================================= -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">تشكيلة MAN الحصرية</span>
+                    <h2 class="section-title">أحدث الأزياء الرجالية الفاخرة</h2>
+                    <p class="section-subtitle">تصفح أقسام الجواكت، البدل، القمصان، والأحذية — كل خانة تفاعلية للطلب والشراء</p>
+                </div>
+
+                <!-- تصفية الفئات التفاعلية (تتولد تلقائياً من الأقسام المكتوبة في جوجل شيت عبر data-category) -->
+                <div class="category-filters" id="category-filters">
+                    <button type="button" class="filter-btn active" data-category="الكل">الكل</button>
+                </div>
+
+                <!-- شبكة المنتجات الكاملة (تتولد تلقائياً بواسطة JavaScript) -->
+                <div class="products-grid" id="products-grid">
+                    <div class="loading-products-spinner">
+                        <div class="spinner-icon"></div>
+                        <p>جارٍ تحميل المنتجات من المتجر...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- نافذة عرض تفاصيل المنتج المنبثقة (Quick View Modal) -->
+        <div id="product-modal-backdrop" class="product-modal-backdrop">
+            <div id="product-modal-content" class="product-modal">
+                <!-- يتم تعبئة المحتوى ديناميكياً بواسطة JavaScript -->
+            </div>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- 3. قسم سلة المشتريات (Shopping Cart Section)                      -->
+        <!-- ================================================================= -->
+        <section id="cart" class="cart-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">حقيبة التسوق</span>
+                    <h2 class="section-title">سلة المشتريات</h2>
+                    <p class="section-subtitle">قم بمراجعة القطع وتعديل الكميات قبل التوجه لتأكيد الطلب</p>
+                </div>
+
+                <div class="cart-layout">
+                    <!-- قائمة عناصر السلة المحدثة ديناميكياً بواسطة JavaScript -->
+                    <div class="cart-items-wrapper">
+                        <div class="cart-header-row">
+                            <span>المنتج</span>
+                            <span>الكمية</span>
+                            <span>السعر الإجمالي</span>
+                            <span>إزالة</span>
+                        </div>
+
+                        <!-- الحاوية الديناميكية لعناصر السلة -->
+                        <div id="cart-items-container"></div>
+
+                        <!-- صندوق كوبون الخصم التفاعلي الحقيقي -->
+                        <div class="cart-coupon-box" id="coupon-box">
+                            <input type="text" id="coupon-code-input" placeholder="أدخل كود الخصم (مثال: MAN20)" class="coupon-input" dir="ltr">
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="applyCouponCode()">تطبيق الكوبون</button>
+                        </div>
+                        <div id="applied-coupon-tag-container"></div>
+                    </div>
+
+                    <!-- ملخص السلة والحساب بالجنيه المصري -->
+                    <div class="cart-summary-card">
+                        <h3 class="summary-title">ملخص الطلب</h3>
+                        <div class="summary-list">
+                            <div class="summary-row">
+                                <span>المجموع الفرعي</span>
+                                <span id="cart-subtotal">0 ج.م</span>
+                            </div>
+                            <!-- صف خصم الكوبون الفعلي -->
+                            <div class="summary-row discount-row" id="cart-discount-row" style="display: none;">
+                                <span id="cart-discount-label">خصم الكوبون</span>
+                                <span class="text-discount" id="cart-discount-val">-0 ج.م</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>تكلفة الشحن والتوصيل</span>
+                                <span id="cart-shipping" class="text-free">مجاناً</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>ضريبة القيمة المضافة</span>
+                                <span>مشمولة بالسعر</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-row total-row">
+                                <span>المجموع الكلي</span>
+                                <span class="final-price" id="cart-total">0 ج.م</span>
+                            </div>
+                        </div>
+
+                        <a href="#checkout" class="btn btn-primary btn-block">المتابعة لتأكيد الطلب</a>
+                        
+                        <div class="secure-checkout-hint">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <span>تسوق آمن ومشفر 100% ومعاينة قبل الدفع</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 4. قسم تأكيد الطلب وبيانات الشحن (Checkout Section)              -->
+        <!-- ================================================================= -->
+        <section id="checkout" class="checkout-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">الخطوة النهائية</span>
+                    <h2 class="section-title">تأكيد الطلب وبيانات الشحن</h2>
+                    <p class="section-subtitle">أدخل بياناتك وسيتم إرسال طلبك مباشرة إلى محادثة واتساب لتأكيد شحنه</p>
+                </div>
+
+                <div class="checkout-layout">
+                    <!-- نموذج إدخال البيانات -->
+                    <form class="checkout-form" id="order-form">
+                        <!-- معلومات العميل -->
+                        <div class="form-group-card">
+                            <h3 class="form-card-title">
+                                <span class="step-num">1</span>
+                                المعلومات الشخصية
+                            </h3>
+                            <div class="form-grid">
+                                <div class="input-field">
+                                    <label for="full-name">الاسم بالكامل *</label>
+                                    <input type="text" id="full-name" required placeholder="مثال: أحمد محمود">
+                                </div>
+                                <div class="input-field">
+                                    <label for="phone">رقم الهاتف (الواتساب) *</label>
+                                    <input type="tel" id="phone" required placeholder="01XXXXXXXXX" dir="ltr" pattern="^01[0125][0-9]{8}$" title="يرجى إدخال رقم هاتف مصري صحيح يبدأ بـ 01 ومكون من 11 رقماً (مثال: 01012345678)" maxlength="11">
+                                </div>
+                                <div class="input-field full-width">
+                                    <label for="email">البريد الإلكتروني (اختياري)</label>
+                                    <input type="email" id="email" placeholder="name@domain.com" dir="ltr">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- عنوان الشحن والمحافظات المصرية -->
+                        <div class="form-group-card">
+                            <h3 class="form-card-title">
+                                <span class="step-num">2</span>
+                                عنوان التوصيل داخل مصر
+                            </h3>
+                            <div class="form-grid">
+                                <div class="input-field">
+                                    <label for="city">المحافظة *</label>
+                                    <select id="city" required>
+                                        <option value="" disabled selected>اختر محافظتك *</option>
+                                        <option value="القاهرة">القاهرة</option>
+                                        <option value="الجيزة">الجيزة</option>
+                                        <option value="الإسكندرية">الإسكندرية</option>
+                                        <option value="القليوبية">القليوبية</option>
+                                        <option value="الدقهلية">الدقهلية (المنصورة)</option>
+                                        <option value="الغربية">الغربية (طنطا / المحلة)</option>
+                                        <option value="الشرقية">الشرقية (الزقازيق / العاشر)</option>
+                                        <option value="المنوفية">المنوفية (شبين الكوم / قويسنا)</option>
+                                        <option value="البحيرة">البحيرة (دمنهور)</option>
+                                        <option value="كفر الشيخ">كفر الشيخ</option>
+                                        <option value="دمياط">دمياط</option>
+                                        <option value="بورسعيد">بورسعيد</option>
+                                        <option value="الإسماعيلية">الإسماعيلية</option>
+                                        <option value="السويس">السويس</option>
+                                        <option value="الفيوم">الفيوم</option>
+                                        <option value="بني سويف">بني سويف</option>
+                                        <option value="المنيا">المنيا</option>
+                                        <option value="أسيوط">أسيوط</option>
+                                        <option value="سوهاج">سوهاج</option>
+                                        <option value="قنا">قنا</option>
+                                        <option value="الأقصر">الأقصر</option>
+                                        <option value="أسوان">أسوان</option>
+                                        <option value="البحر الأحمر">البحر الأحمر (الغردقة)</option>
+                                        <option value="جنوب سيناء">جنوب سيناء (شرم الشيخ)</option>
+                                        <option value="شمال سيناء">شمال سيناء</option>
+                                        <option value="مطروح">مطروح والساحل الشمالي</option>
+                                        <option value="الوادي الجديد">الوادي الجديد</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label for="district">المدينة / المنطقة / الحي *</label>
+                                    <input type="text" id="district" required placeholder="مثال: المعادي، مصر الجديدة، النزهة">
+                                </div>
+                                <div class="input-field full-width">
+                                    <label for="address">العنوان التفصيلي (الشارع / رقم العمارة / رقم الشقة) *</label>
+                                    <input type="text" id="address" required placeholder="مثال: شارع النصر، عمارة 12، الدور 4، شقة 8">
+                                </div>
+                                <div class="input-field full-width">
+                                    <label for="notes">ملاحظات إضافية للتوصيل (اختياري)</label>
+                                    <textarea id="notes" rows="3" placeholder="أي تفاصيل تحب إخبار المندوب بها أو موعد التسليم المفضل..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- طريقة الدفع -->
+                        <div class="form-group-card">
+                            <h3 class="form-card-title">
+                                <span class="step-num">3</span>
+                                خيارات الدفع
+                            </h3>
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="cod" checked>
+                                    <span class="custom-radio"></span>
+                                    <div class="payment-details">
+                                        <div class="payment-name-row">
+                                            <strong>الدفع عند الاستلام (Cash on Delivery)</strong>
+                                            <span class="payment-tag">الأكثر أماناً</span>
+                                        </div>
+                                        <p>ادفع نقداً عند استلام ومعاينة ملابسك الفاخرة أمام المندوب</p>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="wallet">
+                                    <span class="custom-radio"></span>
+                                    <div class="payment-details">
+                                        <div class="payment-name-row">
+                                            <strong>إنستاباي / محافظ إلكترونية (فودافون كاش - أورنج - اتصالات)</strong>
+                                            <span class="payment-tag">تحويل فوري</span>
+                                        </div>
+                                        <p>تحويل سريع عبر InstaPay أو المحافظ الذكية مباشرة للرقم المعتمد</p>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="online">
+                                    <span class="custom-radio"></span>
+                                    <div class="payment-details">
+                                        <div class="payment-name-row">
+                                            <strong>بطاقة بنكية / فيزا / ميزة (Meeza)</strong>
+                                            <span class="payment-tag">دفع إلكتروني</span>
+                                        </div>
+                                        <p>دفع آمن ومشفر باستخدام بطاقتك البنكية المصرية</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- زر تأكيد الطلب -->
+                        <div class="form-submit-wrap">
+                            <label class="terms-agree">
+                                <input type="checkbox" required checked>
+                                <span>أوافق على <a href="#">شروط الخدمة</a> وسياسة الشحن والاستبدال والمعاينة</span>
+                            </label>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                تأكيد وإرسال الطلب عبر واتساب (0 ج.م)
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- الجانب الإرشادي للطلب -->
+                    <div class="checkout-aside">
+                        <div class="summary-recap-box">
+                            <h4 class="recap-title">موجز السلة</h4>
+                            <div class="checkout-recap-items" id="checkout-recap-items">
+                                <!-- يتم التعبئة ديناميكياً بواسطة JS -->
+                            </div>
+                            <div class="recap-divider"></div>
+                            <div class="recap-item total">
+                                <span>المبلغ الإجمالي المستحق:</span>
+                                <strong id="checkout-recap-total">0 ج.م</strong>
+                            </div>
+                        </div>
+
+                        <div class="trust-box">
+                            <h4 class="trust-title">لماذا تتسوق بثقة من MAN؟</h4>
+                            <ul class="trust-list">
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <span>فحص جودة يدوي لكل قطعة قبل خروجها</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <span>تغليف هدايا فاخر بصندوق صلب مجاناً</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <span>خدمة عملاء راقية وسريعة عبر واتساب</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <span>معاينة القطع قبل الاستلام والدفع في مصر</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- تذييل الصفحة (Footer) -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <a href="#" class="brand-logo footer-logo">
+                    <span class="logo-text">MAN</span>
+                    <span class="logo-sub">MEN'S ATELIER</span>
+                </a>
+                <p class="footer-desc">
+                    العلامة المتخصصة في أرقى الأزياء الرجالية المعاصرة باللون الأسود الملكي، لتمنحك حضوراً واثقاً وأناقة خالدة في مصر.
+                </p>
+                <div class="social-links">
+                    <a href="https://wa.me/201200297370" target="_blank" aria-label="WhatsApp" data-whatsapp-link>WA</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="TikTok">TK</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero">الرئيسية</a></li>
+                    <li><a href="#bestsellers">الأكثر طلباً 🔥</a></li>
+                    <li><a href="#products">التشكيلة والتصنيفات</a></li>
+                    <li><a href="#cart">سلة المشتريات</a></li>
+                    <li><a href="#checkout">تأكيد الطلب</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">خدمة العملاء</h4>
+                <ul class="footer-links">
+                    <li><a href="https://wa.me/201200297370" target="_blank" data-whatsapp-link>تواصل مباشر عبر الواتساب (<span data-whatsapp-display>01200297370</span>)</a></li>
+                    <li><a href="#">سياسة الاسترجاع والاستبدال</a></li>
+                    <li><a href="#">الأسئلة الشائعة</a></li>
+                    <li><a href="#">الشحن لجميع المحافظات</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">النشرة البريدية</h4>
+                <p class="newsletter-desc">انضم إلى قائمة كبار الشخصيات لتصلك العروض الحصرية أولاً.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('تم اشتراكك بنجاح في نشرة MAN الحصرية ✨');">
+                    <input type="email" placeholder="بريدك الإلكتروني" required>
+                    <button type="submit" class="btn btn-primary btn-sm">اشتراك</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-content">
+                <p>© 2026 متجر MAN للرجال. جميع الحقوق محفوظة.</p>
+                <div class="payment-cards-icons">
+                    <span>INSTAPAY</span>
+                    <span>VODAFONE CASH</span>
+                    <span>MEEZA</span>
+                    <span>VISA</span>
+                    <span>CASH ON DELIVERY</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زر واتساب العائم أسفل الشاشة (Floating WhatsApp Button) -->
+    <a href="https://wa.me/201200297370" target="_blank" class="floating-whatsapp-btn" id="floating-whatsapp" aria-label="تواصل عبر واتساب" data-whatsapp-link>
+        <svg width="30" height="30" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="floating-whatsapp-tooltip">تحدث مع خدمة العملاء</span>
+    </a>
+
+    <!-- ربط كود JavaScript التفاعلي -->
+    <script src="app.js"></script>
+</body>
+</html>

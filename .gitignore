@@ -1,0 +1,16 @@
+# Dependencies & build outputs from old frameworks
+node_modules/
+dist/
+man-store/
+package.json
+package-lock.json
+postcss.config.js
+tailwind.config.js
+vite.config.js
+src/
+public/
+
+# System files
+.DS_Store
+Thumbs.db
+*.log

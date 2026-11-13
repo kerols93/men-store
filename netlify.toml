@@ -1,6 +1,6 @@
 [build]
-  publish = "."
-  command = ""
+  publish = "dist"
+  command = "echo 'Deploying MAN Luxury Store'"
 
 [[redirects]]
   from = "/*"

@@ -22,7 +22,7 @@
 const GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwtIwnrT6_st8j3QjHN_3j2cNQsEV_KKJW0cLaPevsSQNL51kG1bVL1HdPcOCuYv5o/exec"; 
 
 // رقم الواتساب المعتمد للمتجر بصيغته الدولية (تغييره هنا يحدّث الموقع بالكامل)
-const WHATSAPP_PHONE = "201200297370";
+const WHATSAPP_PHONE = "201011695927";
 
 // العملة والشحن
 const CURRENCY_LABEL = "ج.م";
